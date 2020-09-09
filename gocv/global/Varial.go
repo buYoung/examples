@@ -6,16 +6,20 @@ import (
 )
 
 type Camerainfo struct {
-	Name      string //
-	Number    int64
-	Debug     bool
-	camera    *gocv.VideoCapture
-	window    *gocv.Window
-	eWindow   *gocv.Window
-	mat       gocv.Mat
-	encodemat *gocv.Mat
-	Encodestr string
-	state     chan bool
+	Name             string //
+	Number           int64
+	Debug            bool
+	camera           *gocv.VideoCapture
+	videowriter      *gocv.VideoWriter
+	window           *gocv.Window
+	eWindow          *gocv.Window
+	mat              gocv.Mat
+	encodemat        *gocv.Mat
+	Videowritermat   *gocv.Mat
+	Encodestr        string
+	FPS              int
+	state            chan bool
+	Videowriterstate chan uint8
 }
 
 var (
